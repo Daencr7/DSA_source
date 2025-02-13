@@ -1,1 +1,33 @@
 
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;cin>>n;
+    map <string, int> mp;
+    for (int i = 0; i < n; i++){
+        string x;cin>>x;
+        mp[x]++;
+    }
+    for (auto it=mp.begin();it!=mp.end();++it){
+        if (it == mp.begin()) cout << (*it).first<<" "<<(*it).second<<"\n";
+        
+    }
+    el;
+    for (map<string,int>::reverse_iterator it = mp.rbegin();it!=mp.rend();++it){
+        if (it == mp.rbegin()) cout << (*it).first<<" "<<(*it).second<<"\n";
+    }
+    el;
+    for (auto it=mp.begin();it!=mp.end();++it){
+        cout << (*it).first<<" "<<(*it).second<<"\n";
+        
+    }el;
+    for (map<string,int>::reverse_iterator it = mp.rbegin();it!=mp.rend();++it){
+        cout << (*it).first<<" "<<(*it).second<<"\n";
+    }
+    // cout << mp.begin();
+    return 0;
+}

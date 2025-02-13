@@ -1,1 +1,20 @@
 
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;cin>>n;
+    // map <int, int> mp;
+    set <pair<int,int>>se;
+    for (int i = 0; i < n; i++){
+        int x,y;cin>>x>>y;
+        se.insert({x,y});
+        // se.second().insert(y);
+    }
+    cout << se.size();
+    
+    return 0;
+}

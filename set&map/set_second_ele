@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+bool cmp(pair<string,int>&a, pair<string,int>&b) 
+{ 
+    return a.second < b.second; 
+} 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;cin>>n;
+    set <int> se;
+    for (int i = 0; i < n; i++){
+        int x;cin>>x;
+        se.insert(x);
+    }
+    
+    cout<<se.size();el;
+    auto itx = se.end();
+    --itx;
+    auto itm = se.begin();
+    cout <<*itx<<" "<<*itm;el;
+    --itx;++itm;
+    cout <<*itx<<" "<<*itm;
+    return 0;
+}

@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // int n,m;cin>>n>>m;
+    int n;cin>>n;
+    set <int> se;
+    // map <int,int>mp;
+    int f[n];
+    int arr[n];
+    for (int i = 0; i < n; i++){
+        cin >> arr[i];
+    }
+    for (int i = n-1; i >=0; i--){
+        se.insert(arr[i]);
+        f[i] = se.size();
+    }
+    int q;cin>>q;
+    while (q--){
+        int l;cin>>l;
+        cout<<f[l]<<"\n";
+    }
+    // for (int i = 0; i < n; i++){
+    //     cout << f[i]<<" ";
+    // }
+    // for (int i = 0; i < m; i++){
+    //     int x;cin>>x;
+    //     mp[x] = 1;
+    // }
+    // for (auto x:se){
+    //     if (mp[x]==0)cout << x <<" ";
+    // }
+    return 0;
+}

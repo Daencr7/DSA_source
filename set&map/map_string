@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+bool cmp(pair<string,int>&a, pair<string,int>&b) 
+{ 
+    return a.second < b.second; 
+} 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;cin>>n;
+    map <string, int>mp;
+    for (int i = 0;i < n;i++){
+        string x;cin>>x;
+        mp[x]++;
+    }
+    vector <pair<string,int>> a;
+    for (auto x:mp) {
+        cout <<x.first<<" "<<x.second<<"\n";
+    
+        a.push_back(x);
+    }
+    el;
+    sort(a.begin(),a.end(),cmp);
+    auto it = a.begin();
+    cout <<(*it).first<<" "<<(*it).second<<"\n";
+    it = a.end();--it;
+    cout <<(*it).first<<" "<<(*it).second;
+    // for (auto x:a) cout <<x.first<<" "<<x.second<<"\n";
+    return 0;
+}

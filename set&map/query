@@ -1,0 +1,36 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // int n;cin>>n;
+    // multiset <int> se;
+    map <char, int> mp;
+    string str;cin>>str;
+    for(char x: str){
+        mp[x]++;
+    }
+    int mx=0,mn=1e7;
+    for (auto x:mp){
+        if (x.second > mx) mx = x.second;
+        if (x.second < mn) mn = x.second;
+    }
+    for (auto x:mp){
+        if (x.second == mx){
+            cout << x.first <<" "<<mx<<"\n";
+            break;
+        }
+    }
+    for (auto it = mp.rbegin();it!=mp.rend();++it){
+        if ((*it).second==mn){
+            cout <<(*it).first <<" "<<mn<<"\n";
+            break;
+        }
+    }
+    cout << mp.size();
+
+
+    return 0;
+}

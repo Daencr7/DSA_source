@@ -1,1 +1,30 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
 
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // int n,m;cin>>n>>m;
+    int n;cin>>n;
+    set <int> se;
+    for (int i = 0; i < n; i++){
+        int x;cin>>x;
+        se.insert(x);
+    }
+    int q;cin>>q;
+    while (q--){
+        int a;cin>>a;
+        if(a==1){
+            int b;cin>>b;
+            se.insert(b);
+        }
+        if(a==2){
+            int b;cin>>b;
+            se.erase(b);
+        }
+        if(a==3) cout <<*se.begin()<<"\n";
+        if(a==4) cout <<*se.rbegin()<<"\n";
+    }
+    return 0;
+}

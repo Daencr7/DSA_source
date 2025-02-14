@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    vector<string> lines;
+    string line;
+    while (true) {
+        getline(cin, line);
+        if (line.empty()) break;
+        lines.push_back(line);
+    }
+    map <string, int> mp;
+    for (const auto& str : lines) {
+        mp[str]++;
+    }
+    for (auto x :mp){
+        cout <<x.first<<" "<<x.second<<"\n";
+    }
+    return 0;
+}

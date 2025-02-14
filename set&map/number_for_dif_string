@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    // int n;cin>>n;
+    // multiset <int> se;
+    map <string, int> mp;
+    string s;getline(cin,s);
+    // cout << s;
+    stringstream ss(s);
+    string word;
+    while (ss >> word){
+        mp[word]++;
+    }
+    
+    cout << mp.size()<<"\n";
+    auto it = mp.begin();
+    cout <<(*it).first<<" ";
+    it = mp.end();
+    --it;
+    cout <<(*it).first;
+    return 0;
+}

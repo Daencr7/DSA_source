@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;cin>>n;
+    // multiset <int> se;
+    map <string, string> mp;
+    for (int i = 0; i < n; i++){
+        string x,y;
+        cin>>x;cin.ignore();
+        getline(cin,y);
+        mp[x] = y;
+    }
+    // cout << mp.size();
+    int q;cin>>q;
+    
+    while(q--){
+        string x;cin>>x;
+        if (mp[x]=="") cout <<"NOT FOUND\n";
+        else cout <<mp[x]<<"\n";
+    }
+
+    return 0;
+}

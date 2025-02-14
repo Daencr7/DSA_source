@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+#define el cout<<"\n"
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int n;cin>>n;
+    set <char> se;
+    for (int i = 0; i < n; i++){
+        char x;cin>>x;
+        se.insert(x);
+    }
+    cout << se.size()<<"\n";
+    for (char x:se) cout <<x<<" ";
+    cout <<"\n";
+    for (auto it = se.rbegin();it!=se.rend();++it)
+        cout << *it <<" ";
+    return 0;
+}

@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+using namespace std;
+bool cmp(int x, int y){
+    return x > y;
+}
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r", stdin);
+    freopen("output.txt","w", stdout);
+    #endif
+    string str;
+    vector<string> s;
+    while (getline(cin, str)){
+        if(str.empty()){
+            break;
+        }
+        s.push_back(str);
+    }
+    // for (auto x: s) cout << x << "\n";
+    // map < string,vector<pair<int,int>>> mp;
+    vector<string> v;
+
+    for (auto x: s){
+        stringstream ss(x);
+        string word;
+        while(ss>>word){
+            v.push_back(word);
+        }
+    }
+    map<string,double>m1;
+    map<string,double>m2;
+    char c = '9';
+    for (auto it = v.begin(); it!=v.end(); it = it + 3){
+        // int x = v[i+1];
+        m1[*it] += stod(*(it+1));
+        m2[*it] += stod(*(it+1))*stod(*(it+2));
+    }
+    set <string> name;
+    for (int i = 0; i < v.size(); i = i+3){
+        name.insert(v[i]);
+    }
+    map<string,double>m3;
+    for (auto it = name.rbegin();it!=name.rend();++it){
+        // m3[x] = m2[x]*1.00/m1[x];
+        // cout << m3[x] <<"\n";
+        m3[*it] = m2[*it]/m1[*it];
+        cout <<*it<<" : "<<fixed<<setprecision(2)<<m3[*it]<<"\n";
+    }
+    return 0;
+}

@@ -1,0 +1,51 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+#define el cout<<"\n"
+#define pb "push_back"
+#define ins insert
+#define FOR0(i,n) for(int i=0;i<n;i++)
+using namespace std;
+bool cmp(int x, int y){
+    return x > y;
+}
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r", stdin);
+    freopen("output.txt","w", stdout);
+    #endif
+// Khai bao
+    map<string,string>mp;
+
+//ct chinh
+    int n;cin>>n;
+    cin.ignore();
+    FOR0(i,n){
+        string name,address;
+        getline(cin,name);
+        // cin.ignore();
+        getline(cin,address);
+        mp[address] = name;
+        // cout << name<<"-"<<address<<"\n";
+        // cout << address;
+    }
+    int q;cin>>q;
+    while(q--){
+        string x,y;
+        int z;
+        cin>>x>>y>>z;
+        if(mp[x]=="") cout <<"Unknown wallet";
+        else cout << mp[x];
+        cout <<" send "<<z<<" bitcoin to ";
+        if (mp[y]=="") cout <<"Unknown wallet";
+        else cout << mp[y];
+        el;
+    }
+
+    // Test the program
+    // map<string, int> mp;
+    // mp["ronaldo"] = 7;
+
+    // cout << mp.second;
+    return 0;
+}

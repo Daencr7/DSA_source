@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+#define el cout<<"\n"
+#define pb "push_back"
+#define ins insert
+using namespace std;
+bool cmp(int x, int y){
+    return x > y;
+}
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r", stdin);
+    freopen("output.txt","w", stdout);
+    #endif
+    // map<string,vector<string>> mp;
+    // set<int> se;
+    vector<set<int>> v;
+    map<int,int>mp;
+    int n;cin>>n;
+    for (int i = 0; i < n; i++){
+        set<int> se;
+        for (int j = 0; j < n; j++){
+            int x;cin>>x;
+            se.insert(x);
+        }
+        v.push_back(se);
+    }
+    for (auto x:v){
+        for (auto a:x) mp[a]++;
+    }
+    bool ck = false;
+    for (auto x: mp){
+        if (x.second==n){
+          cout <<x.first<<" ";
+          ck = true;  
+        } 
+    }
+    if (!ck) cout <<"NOT FOUND";
+    // for (auto x: se) cout << x <<" ";
+    // cout << "Hello World!";
+    return 0;
+}

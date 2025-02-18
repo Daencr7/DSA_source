@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#include <algorithm>
+#define el cout<<"\n"
+#define pb "push_back"
+#define ins insert
+using namespace std;
+bool cmp(int x, int y){
+    return x > y;
+}
+int main()
+{
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r", stdin);
+    freopen("output.txt","w", stdout);
+    #endif
+    map<string,vector<string>> mp;
+    int n;cin>>n;
+    cin.ignore();
+    for (int i = 0; i < n; i++){
+        string s;getline(cin,s);
+        int it = s.find("-");
+        string x,y;
+        x = s.substr(0,it-1);
+        y = s.substr(it+2);
+        mp[x].push_back(y);
+        mp[y].push_back(x);
+    }
+    for (auto &x:mp){
+        sort(x.second.begin(),x.second.end());
+    }
+    for (auto x:mp){
+        cout << x.first<<" : ";
+        for (auto cv=x.second.begin();cv!=x.second.end();++cv){
+            if (cv+1==x.second.end()) cout << *cv;
+            else cout <<*cv<<", ";
+        }
+        el;
+    }
+    return 0;
+}
